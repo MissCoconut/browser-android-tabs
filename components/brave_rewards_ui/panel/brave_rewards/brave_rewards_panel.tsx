@@ -82,5 +82,10 @@ window.cr.define('brave_rewards_panel', function () {
     publisherData
   }
 })
-
+if (document.readyState === "complete"
+     || document.readyState === "interactive") {
+     // document has at least been parsed
+     window.brave_rewards_panel.initialize()
+} else {
 document.addEventListener('DOMContentLoaded', window.brave_rewards_panel.initialize)
+}
